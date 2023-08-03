@@ -1,0 +1,6 @@
+crosschain/=lib/crosschain/contracts/
+ds-test/=lib/forge-std/lib/ds-test/src/
+forge-std/=lib/forge-std/src/
+openzeppelin-contracts/=lib/aurora-sdk/aurora-solidity-sdk/lib/openzeppelin-contracts/contracts/
+openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/
+aurora-sdk/=lib/aurora-sdk/aurora-solidity-sdk/src/
