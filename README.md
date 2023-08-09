@@ -21,9 +21,26 @@ npx hardhat run scripts/deploy.js
 # deploy library
 [reference1](https://blog.csdn.net/zhangce315/article/details/82824369)
 
-# ftCall contract
-address：https://explorer.testnet.aurora.dev/address/0x6c99c4a93dd61b549f0e124a18b79aade90531d9
+# testwNEAR token
+```solidity
+import "openzeppelin-contracts/token/ERC20/ERC20.sol";
 
+contract twNEAR is ERC20 {
+    constructor() ERC20("TestwNEAR", "twNEAR") {}
+
+    function decimals() public pure override returns (uint8) {
+        return 24;
+    }
+
+    // everyone can direct mint usdc
+    function mint(address to, uint256 amount) public {
+        _mint(to, amount);
+    }
+}
+```
+address：https://explorer.testnet.aurora.dev/address/0x8394a2200eb33cf65818d5ab1036938352f58ea7
+
+# ftCall contract
 [aurora evm contract source code](./src/FtCall.sol)
 ```solidity
 import "openzeppelin-contracts/access/AccessControl.sol";
@@ -76,6 +93,8 @@ contract FtCall is AccessControl {
     }
 }
 ```
+address：https://explorer.testnet.aurora.dev/address/0x6c99c4a93dd61b549f0e124a18b79aade90531d9
+
 # signer on near
 [shrm.orderly-dev.testnet](https://explorer.testnet.near.org/accounts/shrm.orderly-dev.testnet)
 # transfer aurora record
