@@ -9,15 +9,6 @@ first pull the project:
 git submodule update --init --recursive
 ```
 
-```shell
-git submodule update --recursive
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
-
 # deploy library
 [reference1](https://blog.csdn.net/zhangce315/article/details/82824369)
 
