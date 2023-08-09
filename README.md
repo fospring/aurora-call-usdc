@@ -91,5 +91,25 @@ contract call command:
 aurora-cli --network testnet --near-key-path $near_key_path call --aurora-secret-key $aurora_key --address 0x6c99c4a93dd61b549f0e124a18b79aade90531d9 --function ftTransferCall --abi-path out/FtCall.sol/FtCall.abi --args '{"attachedNear": "1", "ftTokenAcc": "usdc.orderly-dev.testnet", "data": "0x7b5c2272656365697665725f69645c223a205c2261737365742d6d616e616765722e6f726465726c792d6465762e746573746e65745c222c205c226d73675c223a205c224465706f7369745c222c205c22616d6f756e745c223a205c2231303030303030305c227d"}'
 ```
 Near tx: https://explorer.testnet.near.org/transactions/9suxzJXJwP7fyNHZBfNENxKY6UWFi2AyTt5WpZc6TA4t  
-error info:
+log info:
+```text
+signer_address Address(0x4053e7f3cf94cc7e0d90d724523fa1fc1fa2d842)
+total_writes_count 1
+total_written_bytes 32
+```
+error info:  
 `ERC20: insufficient allowance...`
+# my account's token balance：
+nETH
+```shell
+near view aurora ft_balance_of '{"account_id": "4053e7f3cf94cc7e0d90d724523fa1fc1fa2d842.aurora"}'
+View call: aurora.ft_balance_of({"account_id": "4053e7f3cf94cc7e0d90d724523fa1fc1fa2d842.aurora"})
+Log [aurora]: Balance of nETH [4053e7f3cf94cc7e0d90d724523fa1fc1fa2d842.aurora]: 2000000000000000
+'2000000000000000'
+```
+ft token:
+```shell
+near view usdc.orderly-dev.testnet ft_balance_of '{"account_id": "4053e7f3cf94cc7e0d90d724523fa1fc1fa2d842.aurora"}'
+View call: usdc.orderly-dev.testnet.ft_balance_of({"account_id": "4053e7f3cf94cc7e0d90d724523fa1fc1fa2d842.aurora"})
+'100000000'
+```
